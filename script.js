@@ -34,7 +34,9 @@ function checkGuess() {
  `;
     return;
   }
-  attemptCount++;
+  // ... validation code ...
+  attemptCount++; // เพิ่มตรงนี้
+
   if (guessValue === secretNumber) {
     resultContainer.innerHTML = `
  <div class="alert alert-success" role="alert">
@@ -42,7 +44,9 @@ function checkGuess() {
  <p>คุณทายถูกในครั้งที่ ${attemptCount}</p>
  </div>
  `;
-  } else if (guessValue > secretNumber) {
+  }
+  // ... rest of code ...
+  else if (guessValue > secretNumber) {
     resultContainer.innerHTML = `
  <div class="alert alert-warning" role="alert">
  ↓ ตัวเลขสูงไป
@@ -60,11 +64,13 @@ function checkGuess() {
   guessInput.focus();
 }
 // ...existing code...
+
 // ฟังก์ชันอัปเดตจํานวนครั้ง
 function updateDisplay() {
   const attemptsContainer = document.getElementById("attemptsContainer");
   attemptsContainer.textContent = `ทายแล้ว: ${attemptCount} ครั้ง`;
 }
+
 // filepath: script.js
 // ...existing code...
 
